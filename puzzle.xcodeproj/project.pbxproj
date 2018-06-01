@@ -14,6 +14,16 @@
 		D5CB6CCD2010A24700798764 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5CB6CCB2010A24700798764 /* LaunchScreen.storyboard */; };
 		D5CB6CD82010A24700798764 /* puzzleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CB6CD72010A24700798764 /* puzzleTests.swift */; };
 		D5CB6CE32010A24700798764 /* puzzleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CB6CE22010A24700798764 /* puzzleUITests.swift */; };
+		D5CB6CF22019E0E400798764 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CB6CF02019E0E400798764 /* CollectionViewCell.swift */; };
+		D5CB6CF32019E0E400798764 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5CB6CF12019E0E400798764 /* CollectionViewCell.xib */; };
+		D5CB6CF72019EA5600798764 /* n3.png in Resources */ = {isa = PBXBuildFile; fileRef = D5CB6CF62019EA5600798764 /* n3.png */; };
+		D5CB6CF92019EA5B00798764 /* n7.png in Resources */ = {isa = PBXBuildFile; fileRef = D5CB6CF82019EA5B00798764 /* n7.png */; };
+		D5CB6CFB2019EA6000798764 /* n6.png in Resources */ = {isa = PBXBuildFile; fileRef = D5CB6CFA2019EA6000798764 /* n6.png */; };
+		D5CB6CFD2019EA6700798764 /* n5.png in Resources */ = {isa = PBXBuildFile; fileRef = D5CB6CFC2019EA6600798764 /* n5.png */; };
+		D5CB6CFF2019EA6E00798764 /* n4.png in Resources */ = {isa = PBXBuildFile; fileRef = D5CB6CFE2019EA6D00798764 /* n4.png */; };
+		D5CB6D012019EA7400798764 /* n2.png in Resources */ = {isa = PBXBuildFile; fileRef = D5CB6D002019EA7400798764 /* n2.png */; };
+		D5CB6D052019EA7C00798764 /* n1.png in Resources */ = {isa = PBXBuildFile; fileRef = D5CB6D042019EA7B00798764 /* n1.png */; };
+		D5CB6D072019EA8100798764 /* n8.png in Resources */ = {isa = PBXBuildFile; fileRef = D5CB6D062019EA8100798764 /* n8.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +57,16 @@
 		D5CB6CDE2010A24700798764 /* puzzleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = puzzleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5CB6CE22010A24700798764 /* puzzleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = puzzleUITests.swift; sourceTree = "<group>"; };
 		D5CB6CE42010A24700798764 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D5CB6CF02019E0E400798764 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		D5CB6CF12019E0E400798764 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
+		D5CB6CF62019EA5600798764 /* n3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = n3.png; sourceTree = "<group>"; };
+		D5CB6CF82019EA5B00798764 /* n7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = n7.png; sourceTree = "<group>"; };
+		D5CB6CFA2019EA6000798764 /* n6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = n6.png; sourceTree = "<group>"; };
+		D5CB6CFC2019EA6600798764 /* n5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = n5.png; sourceTree = "<group>"; };
+		D5CB6CFE2019EA6D00798764 /* n4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = n4.png; sourceTree = "<group>"; };
+		D5CB6D002019EA7400798764 /* n2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = n2.png; sourceTree = "<group>"; };
+		D5CB6D042019EA7B00798764 /* n1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = n1.png; sourceTree = "<group>"; };
+		D5CB6D062019EA8100798764 /* n8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = n8.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +123,16 @@
 				D5CB6CC92010A24700798764 /* Assets.xcassets */,
 				D5CB6CCB2010A24700798764 /* LaunchScreen.storyboard */,
 				D5CB6CCE2010A24700798764 /* Info.plist */,
+				D5CB6D042019EA7B00798764 /* n1.png */,
+				D5CB6D002019EA7400798764 /* n2.png */,
+				D5CB6CF62019EA5600798764 /* n3.png */,
+				D5CB6CFE2019EA6D00798764 /* n4.png */,
+				D5CB6CFC2019EA6600798764 /* n5.png */,
+				D5CB6CFA2019EA6000798764 /* n6.png */,
+				D5CB6CF82019EA5B00798764 /* n7.png */,
+				D5CB6D062019EA8100798764 /* n8.png */,
+				D5CB6CF02019E0E400798764 /* CollectionViewCell.swift */,
+				D5CB6CF12019E0E400798764 /* CollectionViewCell.xib */,
 			);
 			path = puzzle;
 			sourceTree = "<group>";
@@ -232,9 +262,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5CB6D072019EA8100798764 /* n8.png in Resources */,
+				D5CB6CF72019EA5600798764 /* n3.png in Resources */,
 				D5CB6CCD2010A24700798764 /* LaunchScreen.storyboard in Resources */,
+				D5CB6CFF2019EA6E00798764 /* n4.png in Resources */,
+				D5CB6CF92019EA5B00798764 /* n7.png in Resources */,
 				D5CB6CCA2010A24700798764 /* Assets.xcassets in Resources */,
+				D5CB6D012019EA7400798764 /* n2.png in Resources */,
+				D5CB6CFD2019EA6700798764 /* n5.png in Resources */,
+				D5CB6CF32019E0E400798764 /* CollectionViewCell.xib in Resources */,
+				D5CB6D052019EA7C00798764 /* n1.png in Resources */,
 				D5CB6CC82010A24700798764 /* Main.storyboard in Resources */,
+				D5CB6CFB2019EA6000798764 /* n6.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +300,7 @@
 			files = (
 				D5CB6CC52010A24700798764 /* ViewController.swift in Sources */,
 				D5CB6CC32010A24700798764 /* AppDelegate.swift in Sources */,
+				D5CB6CF22019E0E400798764 /* CollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
