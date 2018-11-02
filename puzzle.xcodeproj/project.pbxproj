@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D50638E121428BA10044E3C0 /* 白.png in Resources */ = {isa = PBXBuildFile; fileRef = D50638E021428BA10044E3C0 /* 白.png */; };
 		D5CB6CC32010A24700798764 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CB6CC22010A24700798764 /* AppDelegate.swift */; };
 		D5CB6CC52010A24700798764 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CB6CC42010A24700798764 /* ViewController.swift */; };
 		D5CB6CC82010A24700798764 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5CB6CC62010A24700798764 /* Main.storyboard */; };
@@ -16,14 +17,14 @@
 		D5CB6CE32010A24700798764 /* puzzleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CB6CE22010A24700798764 /* puzzleUITests.swift */; };
 		D5CB6CF22019E0E400798764 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CB6CF02019E0E400798764 /* CollectionViewCell.swift */; };
 		D5CB6CF32019E0E400798764 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5CB6CF12019E0E400798764 /* CollectionViewCell.xib */; };
-		D5CB6CF72019EA5600798764 /* n3.png in Resources */ = {isa = PBXBuildFile; fileRef = D5CB6CF62019EA5600798764 /* n3.png */; };
-		D5CB6CF92019EA5B00798764 /* n7.png in Resources */ = {isa = PBXBuildFile; fileRef = D5CB6CF82019EA5B00798764 /* n7.png */; };
-		D5CB6CFB2019EA6000798764 /* n6.png in Resources */ = {isa = PBXBuildFile; fileRef = D5CB6CFA2019EA6000798764 /* n6.png */; };
-		D5CB6CFD2019EA6700798764 /* n5.png in Resources */ = {isa = PBXBuildFile; fileRef = D5CB6CFC2019EA6600798764 /* n5.png */; };
-		D5CB6CFF2019EA6E00798764 /* n4.png in Resources */ = {isa = PBXBuildFile; fileRef = D5CB6CFE2019EA6D00798764 /* n4.png */; };
-		D5CB6D012019EA7400798764 /* n2.png in Resources */ = {isa = PBXBuildFile; fileRef = D5CB6D002019EA7400798764 /* n2.png */; };
-		D5CB6D052019EA7C00798764 /* n1.png in Resources */ = {isa = PBXBuildFile; fileRef = D5CB6D042019EA7B00798764 /* n1.png */; };
-		D5CB6D072019EA8100798764 /* n8.png in Resources */ = {isa = PBXBuildFile; fileRef = D5CB6D062019EA8100798764 /* n8.png */; };
+		D5E165502154F8A100457701 /* n1.png in Resources */ = {isa = PBXBuildFile; fileRef = D5E1654F2154F8A000457701 /* n1.png */; };
+		D5E165522154F8B700457701 /* n2.png in Resources */ = {isa = PBXBuildFile; fileRef = D5E165512154F8B700457701 /* n2.png */; };
+		D5E165542154F8C300457701 /* n3.png in Resources */ = {isa = PBXBuildFile; fileRef = D5E165532154F8C200457701 /* n3.png */; };
+		D5E165562154F8C900457701 /* n4.png in Resources */ = {isa = PBXBuildFile; fileRef = D5E165552154F8C900457701 /* n4.png */; };
+		D5E165582154F8CF00457701 /* n5.png in Resources */ = {isa = PBXBuildFile; fileRef = D5E165572154F8CF00457701 /* n5.png */; };
+		D5E1655C2154F8E500457701 /* n7.png in Resources */ = {isa = PBXBuildFile; fileRef = D5E165592154F8E500457701 /* n7.png */; };
+		D5E1655D2154F8E500457701 /* n8.png in Resources */ = {isa = PBXBuildFile; fileRef = D5E1655A2154F8E500457701 /* n8.png */; };
+		D5E1655E2154F8E500457701 /* n6.png in Resources */ = {isa = PBXBuildFile; fileRef = D5E1655B2154F8E500457701 /* n6.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D50638E021428BA10044E3C0 /* 白.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "白.png"; sourceTree = "<group>"; };
 		D5CB6CBF2010A24700798764 /* puzzle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = puzzle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5CB6CC22010A24700798764 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D5CB6CC42010A24700798764 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,14 +61,14 @@
 		D5CB6CE42010A24700798764 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D5CB6CF02019E0E400798764 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		D5CB6CF12019E0E400798764 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
-		D5CB6CF62019EA5600798764 /* n3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = n3.png; sourceTree = "<group>"; };
-		D5CB6CF82019EA5B00798764 /* n7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = n7.png; sourceTree = "<group>"; };
-		D5CB6CFA2019EA6000798764 /* n6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = n6.png; sourceTree = "<group>"; };
-		D5CB6CFC2019EA6600798764 /* n5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = n5.png; sourceTree = "<group>"; };
-		D5CB6CFE2019EA6D00798764 /* n4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = n4.png; sourceTree = "<group>"; };
-		D5CB6D002019EA7400798764 /* n2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = n2.png; sourceTree = "<group>"; };
-		D5CB6D042019EA7B00798764 /* n1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = n1.png; sourceTree = "<group>"; };
-		D5CB6D062019EA8100798764 /* n8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = n8.png; sourceTree = "<group>"; };
+		D5E1654F2154F8A000457701 /* n1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = n1.png; sourceTree = "<group>"; };
+		D5E165512154F8B700457701 /* n2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = n2.png; sourceTree = "<group>"; };
+		D5E165532154F8C200457701 /* n3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = n3.png; path = "../../スクショなど/n3.png"; sourceTree = "<group>"; };
+		D5E165552154F8C900457701 /* n4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = n4.png; sourceTree = "<group>"; };
+		D5E165572154F8CF00457701 /* n5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = n5.png; sourceTree = "<group>"; };
+		D5E165592154F8E500457701 /* n7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = n7.png; sourceTree = "<group>"; };
+		D5E1655A2154F8E500457701 /* n8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = n8.png; sourceTree = "<group>"; };
+		D5E1655B2154F8E500457701 /* n6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = n6.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,14 +125,15 @@
 				D5CB6CC92010A24700798764 /* Assets.xcassets */,
 				D5CB6CCB2010A24700798764 /* LaunchScreen.storyboard */,
 				D5CB6CCE2010A24700798764 /* Info.plist */,
-				D5CB6D042019EA7B00798764 /* n1.png */,
-				D5CB6D002019EA7400798764 /* n2.png */,
-				D5CB6CF62019EA5600798764 /* n3.png */,
-				D5CB6CFE2019EA6D00798764 /* n4.png */,
-				D5CB6CFC2019EA6600798764 /* n5.png */,
-				D5CB6CFA2019EA6000798764 /* n6.png */,
-				D5CB6CF82019EA5B00798764 /* n7.png */,
-				D5CB6D062019EA8100798764 /* n8.png */,
+				D50638E021428BA10044E3C0 /* 白.png */,
+				D5E1654F2154F8A000457701 /* n1.png */,
+				D5E165512154F8B700457701 /* n2.png */,
+				D5E165532154F8C200457701 /* n3.png */,
+				D5E165552154F8C900457701 /* n4.png */,
+				D5E165572154F8CF00457701 /* n5.png */,
+				D5E1655B2154F8E500457701 /* n6.png */,
+				D5E165592154F8E500457701 /* n7.png */,
+				D5E1655A2154F8E500457701 /* n8.png */,
 				D5CB6CF02019E0E400798764 /* CollectionViewCell.swift */,
 				D5CB6CF12019E0E400798764 /* CollectionViewCell.xib */,
 			);
@@ -218,7 +221,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Ayumi Shimizu";
 				TargetAttributes = {
 					D5CB6CBE2010A24700798764 = {
@@ -262,18 +265,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5CB6D072019EA8100798764 /* n8.png in Resources */,
-				D5CB6CF72019EA5600798764 /* n3.png in Resources */,
+				D5E1655E2154F8E500457701 /* n6.png in Resources */,
+				D5E165582154F8CF00457701 /* n5.png in Resources */,
 				D5CB6CCD2010A24700798764 /* LaunchScreen.storyboard in Resources */,
-				D5CB6CFF2019EA6E00798764 /* n4.png in Resources */,
-				D5CB6CF92019EA5B00798764 /* n7.png in Resources */,
 				D5CB6CCA2010A24700798764 /* Assets.xcassets in Resources */,
-				D5CB6D012019EA7400798764 /* n2.png in Resources */,
-				D5CB6CFD2019EA6700798764 /* n5.png in Resources */,
+				D5E165562154F8C900457701 /* n4.png in Resources */,
+				D5E165542154F8C300457701 /* n3.png in Resources */,
+				D5E165502154F8A100457701 /* n1.png in Resources */,
 				D5CB6CF32019E0E400798764 /* CollectionViewCell.xib in Resources */,
-				D5CB6D052019EA7C00798764 /* n1.png in Resources */,
+				D5E1655D2154F8E500457701 /* n8.png in Resources */,
+				D5E165522154F8B700457701 /* n2.png in Resources */,
+				D50638E121428BA10044E3C0 /* 白.png in Resources */,
+				D5E1655C2154F8E500457701 /* n7.png in Resources */,
 				D5CB6CC82010A24700798764 /* Main.storyboard in Resources */,
-				D5CB6CFB2019EA6000798764 /* n6.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,6 +373,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -376,6 +381,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -426,6 +432,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -433,6 +440,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -467,12 +475,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8R6XY7ZZY4;
 				INFOPLIST_FILE = puzzle/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Ayumi.puzzle;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Adsyumi.puzzle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -481,12 +491,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8R6XY7ZZY4;
 				INFOPLIST_FILE = puzzle/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Ayumi.puzzle;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Adsyumi.puzzle;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
