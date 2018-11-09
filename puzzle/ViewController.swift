@@ -29,18 +29,22 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         collectionView.dataSource = self
         collectionView.delegate = self
         
+        //スワイプする方向 このクラス内でタッチした時rightスワイプの方向は右に移動する
         let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(self.handleGesture))
         rightSwipe.direction = .right
         collectionView.addGestureRecognizer(rightSwipe)
-        
+       
+        //leftスワイプの方向は左ですよ
         let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(self.handleGesture))
         leftSwipe.direction = .left
         collectionView.addGestureRecognizer(leftSwipe)
         
+        //upスワイプの方向は上ですよ
         let upSwipe = UISwipeGestureRecognizer(target: self, action: #selector(self.handleGesture))
         upSwipe.direction = .up
         collectionView.addGestureRecognizer(upSwipe)
         
+        //downスワイプの方向は下ですよ
         let downSwipe = UISwipeGestureRecognizer(target: self, action: #selector(self.handleGesture))
         downSwipe.direction = .down
         collectionView.addGestureRecognizer(downSwipe)
@@ -49,14 +53,20 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     @objc func handleGesture(sender: UISwipeGestureRecognizer) {
+        //変数の宣言　tmpImageという箱の中に画像が入る
         var tmpImage: UIImage!
+        //定数の宣言　atIndexPathの中にタッチした場所のデータを記録
         let atIndexPath: IndexPath = collectionView.indexPathForItem(at: sender.location(in: collectionView))!
+        //変数の宣言　collextionViewCell内のタッチした場所のデータが入るであろう変数がtoIndexPath
         var toIndexPath: IndexPath!
         
         print("atIndexPath:")
+        //タップした場所の座標
         print(atIndexPath)
         
+        //右方向にスワイプする時
         if sender.direction == .right {
+            //toIndexPathの中に行が一列右で列は変わらないIndexPathが入っている
             toIndexPath = IndexPath(row: atIndexPath.row + 1, section: atIndexPath.section)
 //            let toIndex = collectionView.cellForItem(at: toIndexPath)as! CollectionViewCell
 //            let atIndex = collectionView.cellForItem(at: atIndexPath)as! CollectionViewCell
@@ -64,6 +74,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
 //            toIndex.imageView.image = atIndex.imageView.image
 //            atIndex.imageView.image = tmpImage
 //
+            //左方向にスワイプする時
         } else if sender.direction == .left {
             toIndexPath = IndexPath(row: atIndexPath.row - 1, section: atIndexPath.section)
 //            let toIndex = collectionView.cellForItem(at: toIndexPath)as! CollectionViewCell
