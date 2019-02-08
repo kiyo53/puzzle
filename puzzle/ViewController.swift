@@ -7,17 +7,31 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     //collectionViewでUIICollectionViewを更新
     @IBOutlet var collectionView: UICollectionView!
- 
+    @IBOutlet var label: UILabel!
+              var number: Int = 0
+    @IBOutlet var timelabel: UILabel!
+    var count: Float = 0.0
+    var timer: Timer = Timer()
+    @IBOutlet var label2: UILabel!
+    
+    //BGM
+    var fileNameArray = [String]()
+    var imageNameArray = [String]()
+    
+    var audioPlayer : AVAudioPlayer!
     
     //フレームワークの基本型を10.0
     let cellMargin: CGFloat = 10.0
     
     var indexArray: [Int] = []
+    
+    let imageArray:[String] = ["n1.png", "n2.png", "n3.png", "n4.png", "n5.png", "n6.png", "n7.png", "n8.png"]
    
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -120,22 +134,26 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         atcell.imageView.image = tmpImage
         print("toIndexPath: \(toIndexPath)")
         
+        //BGM
+        fileNameArray = [""]
+        imageNameArray = [""]
+        
         
      //0からcollectionView.numberOfSectionsの中で
         for x in 0..<collectionView.numberOfSections {
     
     //変数の宣言
-    //oneofには行が一番左で列がxのセルが入っている
+    //oneofには行が一番ueで列がxのセルが入っている
     let oneOf = collectionView.cellForItem(at: IndexPath(row: 0, section: x))as! CollectionViewCell
-    //secondofには行が左から２列目で列がxのセルが入っている
+    //secondofには行がueから２列目で列がxのセルが入っている
     let secondOf = collectionView.cellForItem(at: IndexPath(row: 1, section: x))as! CollectionViewCell
     //thirdofには行が真ん中で列がxのセルが入っている
     let thirdOf = collectionView.cellForItem(at: IndexPath(row: 2, section: x))as! CollectionViewCell
-    //forthofには行が右から2番目で列がxのセルが入っている
+    //forthofには行がsitaから2番目で列がxのセルが入っている
     let forthOf = collectionView.cellForItem(at: IndexPath(row: 3, section: x))as! CollectionViewCell
-    //fifthofには行が一番右で列がxのセルが入っている
+    //fifthofには行が一番sitaで列がxのセルが入っている
     let fifthOf = collectionView.cellForItem(at: IndexPath(row: 4, section: x))as! CollectionViewCell
-    
+            
     //hanteiという関数の中身は引数xに整数、引数indexArrayに整数が入っている
         func hantei(x: Int, indexArray: [Int]){
         //iの中にindexArrayの中の整数が入る
@@ -158,142 +176,231 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
                     }
                 }
             }
+            
+       
     //セルが横一列全て揃った時
     if oneOf.imageView.image == secondOf.imageView.image && secondOf.imageView.image == thirdOf.imageView.image && thirdOf.imageView.image == forthOf.imageView.image && forthOf.imageView.image == fifthOf.imageView.image
     {
+        indexArray = [0, 1, 2, 3, 4]
+        hantei(x:x, indexArray: indexArray)
     print("横\(x + 1)列目が揃いました")
-        //全てのセルを真っ白の画像に変える
-        oneOf.imageView.image = UIImage(named: "白.png")
-        secondOf.imageView.image = UIImage(named: "白.png")
-        thirdOf.imageView.image = UIImage(named: "白.png")
-        forthOf.imageView.image = UIImage(named: "白.png")
-        fifthOf.imageView.image = UIImage(named: "白.png")
         
+        number = number + 5
+        label.text = String(number)
+       
         //セルが一番右以外揃った時
     } else if oneOf.imageView.image == secondOf.imageView.image && secondOf.imageView.image == thirdOf.imageView.image && thirdOf.imageView.image == forthOf.imageView.image {
-    
+        indexArray = [0, 1, 2, 3]
+        hantei(x:x, indexArray: indexArray)
     print("横\(x + 1)列目が4個揃いました")
-        //一番右以外のセルを真っ白の画像に変える
-        oneOf.imageView.image = UIImage(named: "白.png")
-        secondOf.imageView.image = UIImage(named: "白.png")
-        thirdOf.imageView.image = UIImage(named: "白.png")
-        forthOf.imageView.image = UIImage(named: "白.png")
-       
+        
+        number = number + 4
+        label.text = String(number)
+      
         //セルが一番左以外揃った時
     } else if secondOf.imageView.image == thirdOf.imageView.image && thirdOf.imageView.image == forthOf.imageView.image && forthOf.imageView.image == fifthOf.imageView.image {
         indexArray = [1, 2, 3, 4]
-        hantei(x:)
+        hantei(x:x, indexArray: indexArray)
         print("横\(x + 1)列目が4個揃いました")
-        //一番左以外のセルを真っ白の画像に変える
-//        secondOf.imageView.image = UIImage(named: "白.png")
-//        thirdOf.imageView.image = UIImage(named: "白.png")
-//        forthOf.imageView.image = UIImage(named: "白.png")
-//        fifthOf.imageView.image = UIImage(named: "白.png")
         
+        number = number + 4
+        label.text = String(number)
+       
         //セルが右の二つ以外揃った時
     } else if oneOf.imageView.image == secondOf.imageView.image && secondOf.imageView.image == thirdOf.imageView.image  {
-    
+        indexArray = [0, 1, 2]
+        hantei(x:x, indexArray: indexArray)
     print("横\(x + 1)列目が3個揃いました")
-        //揃ったセルを真っ白の画像に変える
-        oneOf.imageView.image = UIImage(named: "白.png")
-        secondOf.imageView.image = UIImage(named: "白.png")
-        thirdOf.imageView.image = UIImage(named: "白.png")
-      
+        
+        number = number + 3
+        label.text = String(number)
+
         //セルが一番左と右以外揃った時
     } else if secondOf.imageView.image == thirdOf.imageView.image && thirdOf.imageView.image == forthOf.imageView.image {
+        indexArray = [1, 2, 3]
+        hantei(x:x, indexArray: indexArray)
         print("横\(x + 1)列目が3個揃いました")
-        //揃ったセルを真っ白の画像に変える
-        secondOf.imageView.image = UIImage(named: "白.png")
-        thirdOf.imageView.image = UIImage(named: "白.png")
-        forthOf.imageView.image = UIImage(named: "白.png")
         
+        number = number + 3
+        label.text = String(number)
+      
         //セルが左の二つ以外揃った時
     } else if  thirdOf.imageView.image == forthOf.imageView.image && forthOf.imageView.image == fifthOf.imageView.image {
+        indexArray = [2, 3, 4]
+        hantei(x:x, indexArray: indexArray)
         print("横\(x + 1)列目が3個揃いました")
-        //揃ったセルを真っ白の画像に変える
-        thirdOf.imageView.image = UIImage(named: "白.png")
-        forthOf.imageView.image = UIImage(named: "白.png")
-        fifthOf.imageView.image = UIImage(named: "白.png")
         
+        number = number + 3
+        label.text = String(number)
+       
         //まだ三つ以上揃っていない時
     } else {
     print("まだ揃っていません")
     }
         }
-
-        //0からcollectionView.numberOfSectionsの中で
-    for x in 0..<collectionView.numberOfSections{
-        //oneofには行がxで列が一番上のセルが入っている
-        let oneOf = collectionView.cellForItem(at: IndexPath(row: x, section: 4))as! CollectionViewCell
-        //secondofには行がxで列が上から2番目のセルが入っている
-        let secondOf = collectionView.cellForItem(at: IndexPath(row: x, section: 3))as! CollectionViewCell
-        //thirdofには行がxで列が真ん中のセルが入っている
-        let thirdOf = collectionView.cellForItem(at: IndexPath(row: x, section: 2))as! CollectionViewCell
-        //forthofには行がxで列が下から2番目のセルが入っている
-        let forthOf = collectionView.cellForItem(at: IndexPath(row: x, section: 1))as! CollectionViewCell
-        //fifthofには行がx左で列が一番下のセルが入っている
-        let fifthOf = collectionView.cellForItem(at: IndexPath(row: x, section: 0))as! CollectionViewCell
         
         
-        //セルが縦一列揃った時
-        if oneOf.imageView.image == secondOf.imageView.image && secondOf.imageView.image == thirdOf.imageView.image && thirdOf.imageView.image == forthOf.imageView.image && forthOf.imageView.image == fifthOf.imageView.image
-        {
-            print("縦\(x + 1)列目が揃いました")
-            //全てのセルを真っ白の画像に変える
-            oneOf.imageView.image = UIImage(named: "白.png")
-            secondOf.imageView.image = UIImage(named: "白.png")
-            thirdOf.imageView.image = UIImage(named: "白.png")
-            forthOf.imageView.image = UIImage(named: "白.png")
-            fifthOf.imageView.image = UIImage(named: "白.png")
-            
-            //セルが一番下以外揃った時
-        } else if oneOf.imageView.image == secondOf.imageView.image && secondOf.imageView.image == thirdOf.imageView.image && thirdOf.imageView.image == forthOf.imageView.image {
-             print("縦\(x + 1)列目が4個揃いました")
-            //揃ったセルを真っ白の画像に変える
-            oneOf.imageView.image = UIImage(named: "白.png")
-            secondOf.imageView.image = UIImage(named: "白.png")
-            thirdOf.imageView.image = UIImage(named: "白.png")
-            forthOf.imageView.image = UIImage(named: "白.png")
-            
-            //セルが一番上以外揃った時
-        }else if secondOf.imageView.image == thirdOf.imageView.image && thirdOf.imageView.image == forthOf.imageView.image && forthOf.imageView.image == fifthOf.imageView.image {
-            print("縦\(x + 1)列目が4個揃いました")
-            //揃ったセルを真っ白に変える
-            secondOf.imageView.image = UIImage(named: "白.png")
-            thirdOf.imageView.image = UIImage(named: "白.png")
-            forthOf.imageView.image = UIImage(named: "白.png")
-            fifthOf.imageView.image = UIImage(named: "白.png")
-            
-            //セルが下二つ以外揃った時
-        } else if oneOf.imageView.image == secondOf.imageView.image && secondOf.imageView.image == thirdOf.imageView.image {
-            print("縦\(x + 1)列目が3個揃いました")
-            //揃ったセルを真っ白の画像に変える
-            oneOf.imageView.image = UIImage(named: "白.png")
-            secondOf.imageView.image = UIImage(named: "白.png")
-            thirdOf.imageView.image = UIImage(named: "白.png")
-           
-            //セルが一番上と下以外揃った時
-        } else if secondOf.imageView.image == thirdOf.imageView.image && thirdOf.imageView.image == forthOf.imageView.image {
-            print("縦\(x + 1)列目が3個揃いました")
-            //揃ったセルを真っ白に変える
-            secondOf.imageView.image = UIImage(named: "白.png")
-            thirdOf.imageView.image = UIImage(named: "白.png")
-            forthOf.imageView.image = UIImage(named: "白.png")
-            
-            //セルが上二つ以外揃った時
-        } else if  thirdOf.imageView.image == forthOf.imageView.image && forthOf.imageView.image == fifthOf.imageView.image {
-            print("縦\(x + 1)列目が3個揃いました")
-            //揃ったセルを真っ白に変える
-            thirdOf.imageView.image = UIImage(named: "白.png")
-            forthOf.imageView.image = UIImage(named: "白.png")
-            fifthOf.imageView.image = UIImage(named: "白.png")
-            
-            //まだ三つ以上揃っていない時
-        } else {
-            print("まだ揃っていません")
+//        //0からcollectionView.numberOfSectionsの中で
+//        for x in 0..<collectionView.numberOfSections {
+        for x in 0..<collectionView.numberOfSections {
+//
+//            //変数の宣言
+//            //oneofには行が一番ueで列がxのセルが入っている
+//            let oneOf = collectionView.cellForItem(at: IndexPath(row: 0, section: x))as! CollectionViewCell
+            let oneOfRow = collectionView.cellForItem(at: IndexPath(row: x, section: 0))as! CollectionViewCell
+//            //secondofには行がueから２列目で列がxのセルが入っている
+//            let secondOf = collectionView.cellForItem(at: IndexPath(row: 1, section: x))as! CollectionViewCell
+            let secondOfRow = collectionView.cellForItem(at: IndexPath(row: x, section: 1))as! CollectionViewCell
+//            //thirdofには行が真ん中で列がxのセルが入っている
+//            let thirdOf = collectionView.cellForItem(at: IndexPath(row: 2, section: x))as! CollectionViewCell
+            let thirdOfRow = collectionView.cellForItem(at: IndexPath(row: x, section: 2))as! CollectionViewCell
+//            //forthofには行がsitaから2番目で列がxのセルが入っている
+//            let forthOf = collectionView.cellForItem(at: IndexPath(row: 3, section: x))as! CollectionViewCell
+            let forthOfRow = collectionView.cellForItem(at: IndexPath(row: x, section: 3))as! CollectionViewCell
+//            //fifthofには行が一番sitaで列がxのセルが入っている
+//            let fifthOf = collectionView.cellForItem(at: IndexPath(row: 4, section: x))as! CollectionViewCell
+            let fifthOfRow = collectionView.cellForItem(at: IndexPath(row: x, section: 4))as! CollectionViewCell
+//
+//            //hanteiという関数の中身は引数xに整数、引数indexArrayに整数が入っている
+//            func hantei(x: Int, indexArray: [Int]){
+            func  hantei2(x: Int, indexArray: [Int]){
+//                //iの中にindexArrayの中の整数が入る
+//                for i in indexArray {
+                for i in indexArray {
+//                    //yの中に0からxまで入れる
+//                    for y in (0...x).reversed() {
+                    for k in (0...x).reversed() {
+//                        if y > 0{
+                        if k > 0{
+//                            //hanteiOfは行がiで列がyのセルだと宣言します
+//                            let hanteiOf = collectionView.cellForItem(at: IndexPath(row: i, section: y))as!CollectionViewCell
+                            let hantei2Of = collectionView.cellForItem(at: IndexPath(row: i, section: k))as!CollectionViewCell
+//                            //ueOfは行がiで列がy-1のセルだと宣言します
+//                            let ueOf = collectionView.cellForItem(at: IndexPath(row: i, section: y - 1))as!CollectionViewCell
+                            let ueOfRow = collectionView.cellForItem(at: IndexPath(row: i, section: k))as!CollectionViewCell
+//                            //hanteiOfのimageViewのimageにueOfのimageViewのimageが入ります
+//                            hanteiOf.imageView.image = ueOf.imageView.image
+                            hantei2Of.imageView.image = ueOfRow.imageView.image
+//                        }else{
+                        }else{
+//                            //saisyoOfは行がiで列が0のセルだと宣言します
+//                            let saisyoOf = collectionView.cellForItem(at: IndexPath(row: i, section: 0))as!CollectionViewCell
+                            let saisyo2Of = collectionView.cellForItem(at: IndexPath(row: 0, section: k))as!CollectionViewCell
+//                            //saisyoOfのimageViewに入るimageはUIImage
+//                            saisyoOf.imageView.image = UIImage(named: imageArray[Int(arc4random_uniform(8))])
+                            saisyo2Of.imageView.image = UIImage(named: imageArray[Int(arc4random_uniform(8))])
+                        }
+                    }
+                }
+            }
+//                        }
+//                    }
+//                }
+//            }
+//
+//
+//            //セルが横一列全て揃った時
+//            if oneOf.imageView.image == secondOf.imageView.image && secondOf.imageView.image == thirdOf.imageView.image && thirdOf.imageView.image == forthOf.imageView.image && forthOf.imageView.image == fifthOf.imageView.image
+            if oneOfRow.imageView.image == secondOfRow.imageView.image && secondOfRow.imageView.image == thirdOfRow.imageView.image && thirdOfRow.imageView.image == forthOfRow.imageView.image && forthOfRow.imageView.image == fifthOfRow.imageView.image
+            {
+                oneOfRow.imageView.image = UIImage(named: imageArray[Int(arc4random_uniform(8))])
+                secondOfRow.imageView.image = UIImage(named: imageArray[Int(arc4random_uniform(8))])
+                thirdOfRow.imageView.image = UIImage(named: imageArray[Int(arc4random_uniform(8))])
+                forthOfRow.imageView.image = UIImage(named: imageArray[Int(arc4random_uniform(8))])
+                fifthOfRow.imageView.image = UIImage(named: imageArray[Int(arc4random_uniform(8))])
+                
+//                number = number + 5
+//                label.text = String(number)
+//
+//            {
+//                indexArray = [0, 1, 2, 3, 4]
+//                hantei(x:x, indexArray: indexArray)
+//                print("横\(x + 1)列目が揃いました")
+//
+//                //セルが一番右以外揃った時
+//            } else if oneOf.imageView.image == secondOf.imageView.image && secondOf.imageView.image == thirdOf.imageView.image && thirdOf.imageView.image == forthOf.imageView.image {
+            } else if oneOfRow.imageView.image == secondOfRow.imageView.image && secondOfRow.imageView.image == thirdOfRow.imageView.image && thirdOfRow.imageView.image == forthOfRow.imageView.image {
+                oneOfRow.imageView.image = UIImage(named: imageArray[Int(arc4random_uniform(8))])
+                secondOfRow.imageView.image = UIImage(named: imageArray[Int(arc4random_uniform(8))])
+                thirdOfRow.imageView.image = UIImage(named: imageArray[Int(arc4random_uniform(8))])
+                forthOfRow.imageView.image = UIImage(named: imageArray[Int(arc4random_uniform(8))])
+                
+//                number = number + 4
+//                label.text = String(number)
+//
+//                indexArray = [0, 1, 2, 3]
+//                hantei(x:x, indexArray: indexArray)
+//                print("横\(x + 1)列目が4個揃いました")
+//
+//                //セルが一番左以外揃った時
+//            } else if secondOf.imageView.image == thirdOf.imageView.image && thirdOf.imageView.image == forthOf.imageView.image && forthOf.imageView.image == fifthOf.imageView.image {
+            } else if secondOfRow.imageView.image == thirdOfRow.imageView.image && thirdOfRow.imageView.image == forthOfRow.imageView.image && forthOfRow.imageView.image == fifthOfRow.imageView.image {
+                oneOfRow.imageView.image = UIImage(named: imageArray[Int(arc4random_uniform(8))])
+                secondOfRow.imageView.image = UIImage(named: imageArray[Int(arc4random_uniform(8))])
+                thirdOfRow.imageView.image = UIImage(named: imageArray[Int(arc4random_uniform(8))])
+                forthOfRow.imageView.image = UIImage(named: imageArray[Int(arc4random_uniform(8))])
+                fifthOfRow.imageView.image = oneOfRow.imageView.image
+//
+//                number = number + 4
+//                label.text = String(number)
+//                indexArray = [1, 2, 3, 4]
+//                hantei(x:x, indexArray: indexArray)
+//                print("横\(x + 1)列目が4個揃いました")
+//
+//                //セルが右の二つ以外揃った時
+//            } else if oneOf.imageView.image == secondOf.imageView.image && secondOf.imageView.image == thirdOf.imageView.image  {
+            } else if oneOfRow.imageView.image == secondOfRow.imageView.image && secondOfRow.imageView.image == thirdOfRow.imageView.image {
+                oneOfRow.imageView.image = UIImage(named: imageArray[Int(arc4random_uniform(8))])
+                secondOfRow.imageView.image = UIImage(named: imageArray[Int(arc4random_uniform(8))])
+                thirdOfRow.imageView.image = UIImage(named: imageArray[Int(arc4random_uniform(8))])
+                
+//                number = number + 3
+//                label.text = String(number)
+//
+//                indexArray = [0, 1, 2]
+//                hantei(x:x, indexArray: indexArray)
+//                print("横\(x + 1)列目が3個揃いました")
+//
+//                //セルが一番左と右以外揃った時
+//            } else if secondOf.imageView.image == thirdOf.imageView.image && thirdOf.imageView.image == forthOf.imageView.image {
+            } else if secondOfRow.imageView.image == thirdOfRow.imageView.image && thirdOfRow.imageView.image == forthOfRow.imageView.image {
+                oneOfRow.imageView.image = UIImage(named: imageArray[Int(arc4random_uniform(8))])
+                secondOfRow.imageView.image = UIImage(named: imageArray[Int(arc4random_uniform(8))])
+                thirdOfRow.imageView.image = UIImage(named: imageArray[Int(arc4random_uniform(8))])
+                forthOfRow.imageView.image = oneOfRow.imageView.image
+                
+//                number = number + 3
+//                label.text = String(number)
+//                indexArray = [1, 2, 3]
+//                hantei(x:x, indexArray: indexArray)
+//                print("横\(x + 1)列目が3個揃いました")
+//
+//                //セルが左の二つ以外揃った時
+//            } else if  thirdOf.imageView.image == forthOf.imageView.image && forthOf.imageView.image == fifthOf.imageView.image {
+        } else if thirdOfRow.imageView.image == forthOfRow.imageView.image && forthOfRow.imageView.image == fifthOfRow.imageView.image {
+                oneOfRow.imageView.image = UIImage(named: imageArray[Int(arc4random_uniform(8))])
+                secondOfRow.imageView.image = UIImage(named: imageArray[Int(arc4random_uniform(8))])
+                thirdOfRow.imageView.image = UIImage(named: imageArray[Int(arc4random_uniform(8))])
+                forthOfRow.imageView.image = oneOfRow.imageView.image
+                fifthOfRow.imageView.image = secondOfRow.imageView.image
+                
+//                number = number + 3
+//                label.text = String(number)
+//                indexArray = [2, 3, 4]
+//                hantei(x:x, indexArray: indexArray)
+//                print("横\(x + 1)列目が3個揃いました")
+//                //まだ三つ以上揃っていない時
+//            } else {
+            } else {
+//                print("まだ揃っていません")
+                print("まだ揃っていません")
+//            }
+            }
         }
-        }
-    
+//        }
+//
+        
+        
         
         for x in 0..<collectionView.numberOfSections{
             
@@ -318,33 +425,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
         }
     
-        
-//        let centerCell: CollectionViewCell = collectionView.cellForItem(at: toIndexPath) as! CollectionViewCell
-//        let leftCell: CollectionViewCell = collectionView.cellForItem(at: IndexPath(row: toIndexPath.row - 1, section: toIndexPath.section)) as! CollectionViewCell
-//        let rightCell: CollectionViewCell = collectionView.cellForItem(at: IndexPath(row: toIndexPath.row + 1, section: toIndexPath.section)) as! CollectionViewCell
-//        let upCell: CollectionViewCell = collectionView.cellForItem(at: IndexPath(row: toIndexPath.row, section: toIndexPath.section - 1)) as! CollectionViewCell
-//        let downCell: CollectionViewCell = collectionView.cellForItem(at: IndexPath(row: toIndexPath.row, section: toIndexPath.section + 1)) as! CollectionViewCell
-//
-//        if (centerCell.imageView.image == leftCell.imageView.image) && (centerCell.imageView.image == rightCell.imageView.image) {
-//            print("横一列そろった！")
-//        }
-//
-//        if toIndexPath.row - 2 >= 0 {
-//        let left2Cell: CollectionViewCell = collectionView.cellForItem(at: IndexPath(row: toIndexPath.row - 2, section: toIndexPath.section)) as! CollectionViewCell
-//
-//        if (leftCell.imageView.image == left2Cell.imageView.image) && (leftCell.imageView.image == centerCell.imageView.image) {
-//            print("横一列そろった！")
-//        }
-//        }
-//
-//        if toIndexPath.row + 2 <= 4 {
-//        let right2Cell: CollectionViewCell = collectionView.cellForItem(at: IndexPath(row: toIndexPath.row + 2, section: toIndexPath.section)) as! CollectionViewCell
-//
-//       if (rightCell.imageView.image == centerCell.imageView.image) && (rightCell.imageView.image == right2Cell.imageView.image) {
-//            print("横一列そろった！")
-//        }
-//        }
-//    }
 //
 //
 //    override func didReceiveMemoryWarning() {
@@ -352,18 +432,55 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         // Dispose of any resources that can be recreated.
 
 //}
-
+    @IBAction func start() {
+                if !timer.isValid {
+                    timer = Timer.scheduledTimer(timeInterval: 0.01,
+                                                 target: self,
+                                                 selector: #selector(self.up),
+                                                 userInfo: nil,
+                                                 repeats: true
+                    )
+                }
+            }
+    @objc func up() {
+        count = count + 0.01
+        timelabel.text = String(format: "%.2f", count)
+        
+//        let audioPath = URL(fileURLWithPath: Bundle.main.path(forResource: "", ofType: "mp3")!)
+//        audioPlayer = try? AVAudioPlayer(contentsOf: audioPath)
+//        audioPlayer.play()
+//
+        if count >= 15.0 {
+            label2.text = String("すごい！")
+            timer.invalidate()
+//            audioPlayer.stop()
+        }
+    }
+    
+    @IBAction func reset() {
+        number = 0
+        label2.text = String("")
+        label.text = String(number)
+            count = 0.00
+            timelabel.text = String(format: "%.2f", count)
+        
+    }
     
     //セクション内のセルの個数
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 5
     }
     
-    //セクション数
+    //列の数
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 5
     }
     
+//    //行の数
+//    func  numberOfRows(in collectionView: UICollectionView) -> Int {
+//        return 5
+//    }
+//
     //セルの設定
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CollectionViewCell
