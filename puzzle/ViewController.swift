@@ -21,10 +21,10 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     @IBOutlet var label2: UILabel!
     
     //BGM
-    var fileNameArray = [String]()
-    var imageNameArray = [String]()
-    
-    var audioPlayer : AVAudioPlayer!
+//    var fileNameArray = [String]()
+//    var imageNameArray = [String]()
+//
+//    var audioPlayer : AVAudioPlayer!
     
     //フレームワークの基本型を10.0
     let cellMargin: CGFloat = 10.0
@@ -65,8 +65,10 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         downSwipe.direction = .down
         collectionView.addGestureRecognizer(downSwipe)
         
-        
+//        tableView.scrollEnabled = NO;
+        collectionView.isScrollEnabled = false
     }
+    
     
     @objc func handleGesture(sender: UISwipeGestureRecognizer) {
         //変数の宣言　tmpImageという箱の中に画像が入る
@@ -135,9 +137,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         print("toIndexPath: \(toIndexPath)")
         
         //BGM
-        fileNameArray = [""]
-        imageNameArray = [""]
-        
+//        fileNameArray = [""]
+//        imageNameArray = [""]
+//
         
      //0からcollectionView.numberOfSectionsの中で
         for x in 0..<collectionView.numberOfSections {
@@ -449,7 +451,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
 //        let audioPath = URL(fileURLWithPath: Bundle.main.path(forResource: "", ofType: "mp3")!)
 //        audioPlayer = try? AVAudioPlayer(contentsOf: audioPath)
 //        audioPlayer.play()
-//
+
         if count >= 15.0 {
             label2.text = String("すごい！")
             timer.invalidate()
